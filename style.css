@@ -83,8 +83,9 @@ nav a:hover {
     cursor: pointer;
 }
 
+/* MOBILE MENU (анимация открытия) */
 .mobile-menu {
-    display: none;
+    display: none; /* по умолчанию скрыто */
     flex-direction: column;
     background: white;
     position: absolute;
@@ -92,15 +93,33 @@ nav a:hover {
     top: 70px;
     width: 100%;
     border-bottom: 1px solid #e3e3e6;
+
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 999;
 }
 
+/* Класс для открытия меню */
+.mobile-menu.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ссылки меню */
 .mobile-menu a {
     padding: 18px 20px;
     text-decoration: none;
     color: #1d1d1f;
     font-size: 18px;
     border-bottom: 1px solid #ececec;
+    transition: background 0.2s;
 }
+.mobile-menu a:hover {
+    background: rgba(0,0,0,0.05);
+}
+
 
 /* ===== CONTENT ===== */
 
