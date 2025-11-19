@@ -263,3 +263,12 @@ body::before {
 .dots-menu:hover span {
     opacity: 1;
 }
+
+
+@media (max-width: 700px) {
+    nav { display: none; }
+
+    .dots-menu {
+        display: flex;
+    }
+}
