@@ -1,23 +1,20 @@
 console.log("Apple style site loaded");
 
-const burger = document.querySelector(".burger");
+
+const dots = document.querySelector(".dots-menu");
 const mobileMenu = document.querySelector(".mobile-menu");
 
-if (burger) {
-    burger.addEventListener("click", () => {
-        mobileMenu.style.display =
-            mobileMenu.style.display === "flex" ? "none" : "flex";
-
-        burger.src =
-            mobileMenu.style.display === "flex"
-            ? "img/close.svg"
-            : "img/menu.svg";
-    });
-}
+dots.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+});
 
 document.querySelectorAll(".mobile-menu a").forEach(link => {
     link.addEventListener("click", () => {
-        mobileMenu.style.display = "none";
-        burger.src = "img/menu.svg";
+        mobileMenu.classList.remove("open");
     });
 });
+
+
+
+
+/* Закрытие меню при клике на ссылку */
